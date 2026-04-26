@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { BookOpen, History, Users, PlayCircle, GraduationCap } from "lucide-react";
+import { BookOpen, History, Users, PlayCircle, GraduationCap, Shield } from "lucide-react";
 
 export default function HomePage() {
   return (
@@ -38,7 +38,7 @@ export default function HomePage() {
               src="damdami_image.png"
               alt="Traditional Sikh Gurmat Vidya gathering"
               loading="eager"
-              className="h-full w-full object-cover"
+              className="object-cover"
             />
           </div>
         </div>
@@ -107,9 +107,14 @@ export default function HomePage() {
               <div className="space-y-4 border-l-2 border-[#ff9933] pl-6">
                 <p className="italic text-blue-200">"The history of Damdami Taksal is written with the blood of martyrs and the ink of scholars."</p>
               </div>
-              <Link href="/history/leaders" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#ff9933] hover:underline">
-                Read Historical Records <History size={18} />
-              </Link>
+              <div className="flex flex-wrap gap-6">
+                <Link href="/history/leaders" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#ff9933] hover:underline">
+                  The Jathedars <History size={18} />
+                </Link>
+                <Link href="/history/shaheeds" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#ff9933] hover:underline">
+                  The Shaheeds <Shield size={18} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>

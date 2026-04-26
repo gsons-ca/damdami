@@ -3,17 +3,29 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
-import { ArrowLeft, Menu, X } from "lucide-react";
+import { ArrowLeft, Menu, X, ChevronDown } from "lucide-react";
 
 interface NavLink {
   label: string;
   href: string;
+  subLinks?: { label: string; href: string }[];
 }
 
 const navLinks: NavLink[] = [
   { label: "Code of Conduct", href: "/" },
   { label: "Mahapurakh", href: "/mahopurakh" },
-  { label: "History", href: "/history" },
+  { 
+    label: "History", 
+    href: "/history",
+    subLinks: [
+      { label: "Overview", href: "/history" },
+      { label: "The Ten Gurus", href: "/history/the-ten-gurus" },
+      { label: "Leaders", href: "/history/leaders" },
+      { label: "Gursikhs", href: "/history/gursikhs" },
+      { label: "Shaheeds", href: "/history/shaheeds" },
+      { label: "Historical Gurdwaras", href: "/history/gurdwaras" },
+    ]
+  },
   { label: "Gurbani", href: "/gurbani" },
   { label: "Media", href: "/media" },
   { label: "Contact", href: "/contact" },
@@ -21,12 +33,14 @@ const navLinks: NavLink[] = [
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const router = useRouter();
   const pathname = usePathname();
 
   // Close menu and reset view when route changes
   useEffect(() => {
     setIsOpen(false);
+    setActiveDropdown(null);
   }, [pathname]);
 
   return (
@@ -60,13 +74,36 @@ export function Navbar() {
         {/* Navigation Links */}
         <ul className="hidden items-center gap-8 md:flex">
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.label} className="group relative">
+              {link.subLinks ? (
+                <div className="flex items-center gap-1 cursor-default py-2 text-sm font-medium text-slate-700 transition hover:text-[#002366]">
+                  {link.label}
+                  <ChevronDown size={14} />
+                  
+                  {/* Desktop Dropdown */}
+                  <div className="invisible absolute left-0 top-full z-50 w-48 rounded-[2px] border border-slate-100 bg-white p-2 shadow-lg group-hover:visible">
+                    <ul className="flex flex-col gap-1">
+                      {link.subLinks.map((sub) => (
+                        <li key={sub.href}>
+                          <Link
+                            href={sub.href}
+                            className="block rounded-[2px] px-3 py-2 text-xs font-medium text-slate-600 transition hover:bg-slate-50 hover:text-[#002366]"
+                          >
+                            {sub.label}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : (
               <Link
                 href={link.href}
                 className="text-sm font-medium text-slate-700 transition hover:text-[#002366]"
               >
                 {link.label}
               </Link>
+              )}
             </li>
           ))}
         </ul>
@@ -85,14 +122,41 @@ export function Navbar() {
         <div className="border-t border-slate-100 bg-white p-6 shadow-xl md:hidden">
           <ul className="space-y-4">
             {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block text-base font-medium text-slate-700 hover:text-[#002366]"
-                >
-                  {link.label}
-                </Link>
+              <li key={link.label}>
+                {link.subLinks ? (
+                  <div className="space-y-2">
+                    <button 
+                      onClick={() => setActiveDropdown(activeDropdown === link.label ? null : link.label)}
+                      className="flex w-full items-center justify-between text-base font-medium text-slate-700"
+                    >
+                      {link.label}
+                      <ChevronDown size={18} className={`transition-transform ${activeDropdown === link.label ? 'rotate-180' : ''}`} />
+                    </button>
+                    {activeDropdown === link.label && (
+                      <ul className="ml-4 space-y-2 border-l border-slate-100 pl-4">
+                        {link.subLinks.map((sub) => (
+                          <li key={sub.href}>
+                            <Link
+                              href={sub.href}
+                              onClick={() => setIsOpen(false)}
+                              className="block text-sm font-medium text-slate-500 hover:text-[#002366]"
+                            >
+                              {sub.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className="block text-base font-medium text-slate-700 hover:text-[#002366]"
+                  >
+                    {link.label}
+                  </Link>
+                )}
               </li>
             ))}
           </ul>
