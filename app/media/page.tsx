@@ -7,7 +7,7 @@ export default function MediaPage() {
         <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[#002366]">Media & Katha</p>
-            <h1 className="max-w-3xl text-4xl font-semibold leading-tight text-[#002366] sm:text-5xl">
+            <h1 className="max-w-3xl text-3xl font-semibold leading-tight text-[#002366] sm:text-4xl">
               Katha, audio discourses, and visual lessons for the Canadian Sangat.
             </h1>
             <p className="mt-4 max-w-2xl text-base leading-8 text-slate-700">

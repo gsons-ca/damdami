@@ -41,10 +41,10 @@ export default function ShaheedsPage() {
             The Eternal Sacrifice
           </p>
         </div>
-        <h1 className="font-playfair text-4xl font-bold leading-tight text-[#002366] sm:text-6xl">
+        <h1 className="font-playfair text-3xl font-bold leading-tight text-[#002366] sm:text-5xl">
           Shaheeds of the Taksal
         </h1>
-        <p className="max-w-3xl text-xl leading-relaxed text-slate-600">
+        <p className="max-w-3xl text-lg leading-relaxed text-slate-600">
           The history of Damdami Taksal is inseparable from the history of Sikh martyrdom. We honor those who sacrificed their lives to protect Gurbani, the Gurdwara, and the sovereign spirit of the Khalsa.
         </p>
       </header>
