@@ -44,7 +44,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${playfair.variable} ${inter.variable} h-full antialiased scroll-smooth`}
     >
-      <body className="min-h-full flex flex-col bg-[#fffaf0] text-[#202125]">
+      <body className="min-h-full flex flex-col bg-[#fffaf0] text-[#202125]" suppressHydrationWarning>
         <Navbar />
         <Breadcrumbs />
         <main className="flex-1">{children}</main>

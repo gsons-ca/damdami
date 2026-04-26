@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { BookOpen, History, Users, PlayCircle, GraduationCap, Shield } from "lucide-react";
+import { BookOpen, History, Users, PlayCircle, GraduationCap, Shield, ArrowRight, } from "lucide-react";
+
 
 export default function HomePage() {
   return (
@@ -33,16 +34,61 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-sm shadow-2xl ring-8 ring-white">
-            <img
-              src="damdami_image.png"
-              alt="Traditional Sikh Gurmat Vidya gathering"
-              loading="eager"
-              className="object-cover"
-            />
+          <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/50 bg-white ring-1 ring-slate-200">
+              <img
+                src="damdami_image.png"
+                alt="Traditional Sikh Gurmat Vidya gathering"
+                loading="eager"
+                className="h-full w-full object-cover transition-transform duration-[2s] ease-out hover:scale-110"
+              />
+              
+            </div>
           </div>
         </div>
       </header>
+
+      {/* Section: Welcome to Damdami Taksal */}
+      <section className="bg-white py-24 border-b border-slate-50">
+        <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
+          <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
+            <div className="space-y-8">
+              <div className="flex items-center gap-3">
+                <span className="h-px w-8 bg-[#ff9933]"></span>
+                <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#ff9933]">
+                  Ji Aayan Nu
+                </p>
+              </div>
+              <h2 className="font-playfair text-4xl font-bold leading-tight text-[#002366] sm:text-5xl">
+                Welcome to Damdami Taksal
+              </h2>
+              
+              {/* Professional Guru Image Gallery */}
+              <div className="grid grid-cols-3 gap-4 pt-4">
+                {["guru1.png", "guru2.png", "guru3.png"].map((img, i) => (
+                  <div 
+                    key={i} 
+                    className="group relative aspect-[3/4] overflow-hidden rounded-lg border-2 border-transparent transition-all duration-700 hover:border-[#ff9933] hover:shadow-2xl"
+                  >
+                    <img
+                      src={img}
+                      alt={`Guru Image ${i + 1}`}
+                      className="h-full w-full object-cover transition-all duration-[1.5s] grayscale group-hover:grayscale-0 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#002366]/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="relative rounded-2xl bg-[#fffaf0] p-10 shadow-inner">
+              <div className="absolute -left-2 top-10 h-12 w-1 bg-[#ff9933]"></div>
+              <p className="font-playfair text-2xl font-medium italic leading-relaxed text-[#002366]">
+                "The Taksal is the heartbeat of the Panth, preserving the purity of the Guru's word and the spirit of the Khalsa."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Section 2: Gurmat Education - Core Pillars */}
       <section className="bg-white py-24">
@@ -53,30 +99,44 @@ export default function HomePage() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {[
+            {/* Updated Aims & Objectives to match reference design */}
+            {[ 
               {
                 title: "Gurbani Santhiya",
                 desc: "Providing the correct pronunciation and punctuation of Gurbani as taught by the tenth Guru.",
-                icon: GraduationCap,
-                color: "bg-blue-50 text-blue-700",
+                imageSrc: "/santhiya_card.jpg", // Placeholder image - ensure this image exists in your public folder
+                imageAlt: "Students learning Gurbani Santhiya",
+                linkHref: "/gurbani/santhiya",
               },
               {
                 title: "Gurmat Katha",
                 desc: "Expounding upon the deep meanings of Sri Guru Granth Sahib Ji through historical context.",
-                icon: BookOpen,
-                color: "bg-orange-50 text-[#ff9933]",
+                imageSrc: "/katha_card.jpg", // Placeholder image - ensure this image exists in your public folder
+                imageAlt: "Sikh scholar giving Gurmat Katha",
+                linkHref: "/gurbani/katha",
               },
               {
                 title: "Khalsa Rehat",
                 desc: "Maintaining the pristine code of conduct and martial spirit of the Khalsa Panth.",
-                icon: History,
-                color: "bg-slate-50 text-slate-700",
+                imageSrc: "/rehat_card.jpg", // Placeholder image - ensure this image exists in your public folder
+                imageAlt: "Khalsa practicing traditional martial arts",
+                linkHref: "/code-of-conduct/rehat",
               },
             ].map((pillar) => (
-              <div key={pillar.title} className="group rounded-[2px] border border-slate-100 bg-white p-10 shadow-sm transition-all hover:border-[#ff9933]/30 hover:shadow-xl">
-                <pillar.icon className={`mb-6 h-12 w-12 rounded-lg p-2.5 ${pillar.color}`} />
-                <h3 className="text-xl font-bold text-[#002366]">{pillar.title}</h3>
-                <p className="mt-4 leading-relaxed text-slate-600">{pillar.desc}</p>
+              <div key={pillar.title} className="group relative h-72 overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
+                <img
+                  src={pillar.imageSrc}
+                  alt={pillar.imageAlt}
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#002366] to-transparent opacity-90 transition-opacity duration-300 group-hover:opacity-95"></div>
+                <div className="relative flex h-full flex-col justify-end p-6 text-white">
+                  <h3 className="font-playfair text-2xl font-bold">{pillar.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed opacity-90">{pillar.desc}</p>
+                  <Link href={pillar.linkHref} className="mt-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#ff9933] hover:underline">
+                    Read More <ArrowRight size={16} />
+                  </Link>
+                </div>
               </div>
             ))}
           </div>

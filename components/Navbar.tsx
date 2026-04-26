@@ -12,8 +12,24 @@ interface NavLink {
 }
 
 const navLinks: NavLink[] = [
-  { label: "Code of Conduct", href: "/" },
-  { label: "Mahapurakh", href: "/mahopurakh" },
+  { 
+    label: "Code of Conduct", 
+    href: "/",
+    subLinks: [
+      { label: "Overview", href: "/" },
+      { label: "Rehat Maryada", href: "/code-of-conduct/rehat" },
+      { label: "Taksal Traditions", href: "/code-of-conduct/traditions" },
+    ]
+  },
+  { 
+    label: "Mahapurakh", 
+    href: "/mahopurakh",
+    subLinks: [
+      { label: "Overview", href: "/mahopurakh" },
+      { label: "Past Jathedars", href: "/mahopurakh/jathedars" },
+      { label: "Current Leadership", href: "/mahopurakh/leadership" },
+    ]
+  },
   { 
     label: "History", 
     href: "/history",
@@ -26,9 +42,35 @@ const navLinks: NavLink[] = [
       { label: "Historical Gurdwaras", href: "/history/gurdwaras" },
     ]
   },
-  { label: "Gurbani", href: "/gurbani" },
-  { label: "Media", href: "/media" },
-  { label: "Contact", href: "/contact" },
+  { 
+    label: "Gurbani", 
+    href: "/gurbani",
+    subLinks: [
+      { label: "Overview", href: "/gurbani" },
+      { label: "Santhiya", href: "/gurbani/santhiya" },
+      { label: "Katha", href: "/gurbani/katha" },
+      { label: "Pothis & Steeks", href: "/gurbani/pothis" },
+    ]
+  },
+  { 
+    label: "Media", 
+    href: "/media",
+    subLinks: [
+      { label: "Overview", href: "/media" },
+      { label: "Audio Library", href: "/media/audio" },
+      { label: "Video Gallery", href: "/media/video" },
+      { label: "Photo Gallery", href: "/media/gallery" },
+    ]
+  },
+  { 
+    label: "Contact", 
+    href: "/contact",
+    subLinks: [
+      { label: "Overview", href: "/contact" },
+      { label: "Head Office", href: "/contact/office" },
+      { label: "Send a Message", href: "/contact/message" },
+    ]
+  },
 ];
 
 export function Navbar() {
