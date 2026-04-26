@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Footer } from "../components/footer";
-import { SiteNav } from "../components/site-nav";
+import { Navbar } from "../components/Navbar";
+import { Breadcrumbs } from "../components/Breadcrumbs";
+import { ScrollToTop } from "../components/ScrollToTop";
 import "./globals.css";
 
 const playfair = Playfair_Display({
@@ -37,10 +39,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} h-full antialiased`}>
+    <html 
+      lang="en" 
+      data-scroll-behavior="smooth"
+      className={`${playfair.variable} ${inter.variable} h-full antialiased scroll-smooth`}
+    >
       <body className="min-h-full flex flex-col bg-[#fffaf0] text-[#202125]">
-        <SiteNav />
+        <Navbar />
+        <Breadcrumbs />
         <main className="flex-1">{children}</main>
+        <ScrollToTop />
         <Footer />
       </body>
     </html>
