@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 const mahapurakhs = [
@@ -7,7 +6,7 @@ const mahapurakhs = [
     name: "Baba Deep Singh Ji",
     title: "1st Mukhia Jathedar",
     period: "1682 – 1757",
-    desc: "The legendary scholar-warrior hand-picked by Guru Gobind Singh Ji to lead the Taksal. He scribed four copies of Sri Guru Granth Sahib Ji and attained martyrdom defending the sanctity of Harmandir Sahib.",
+    desc: "Respected Panthic diamond treasure-trove of knowledge Brahm Giani complete in the practices of the Khalsa Sant…",
   },
   {
     id: "2",
@@ -49,14 +48,14 @@ const mahapurakhs = [
     name: "Sant Giani Jarnail Singh Ji",
     title: "14th Mukhia Jathedar",
     period: "1947 – 1984",
-    desc: "The 20th century's most iconic figure of Sikh sovereignty, who revitalized the spirit of Amrit and the concept of Miri-Piri in the modern age.",
+    desc: "The 20th century’s great General the heart of the Sikh youth charismatic personality Sant Jarnail Singh…",
   },
   {
     id: "15",
     name: "Baba Thakur Singh Ji",
     title: "Acting Jathedar (1984-2004)",
     period: "1915 – 2004",
-    desc: "The embodiment of humility and service, he managed the Taksal with grace for two decades, preserving the legacy for future generations.",
+    desc: "Sant Jee led the Sikh nation into the new millenium Baba Takhur Singh Jee was born…",
   },
 ];
 
@@ -109,15 +108,17 @@ export default function MahapurakhPage() {
                   <p className="text-[10px] font-bold uppercase tracking-widest text-[#D4AF37]">
                     {leader.period}
                   </p>
-                  <p className="mt-1 text-xs font-bold uppercase tracking-wider text-[#002366]/70">
-                  {leader.title}
-                </p>
-                  <h2 className="mt-3 font-playfair text-xl font-bold text-slate-900 group-hover:text-[#002366]">
-                  {leader.name}
-                </h2>
-                  <p className="mt-4 text-sm leading-relaxed text-slate-600">
-                  {leader.desc}
-                </p>
+                  <div className="mt-2 inline-block bg-[#002366] px-3 py-1 text-[9px] font-bold uppercase tracking-wider text-white">
+                    {leader.title}
+                  </div>
+                  <h2 className="mt-4 font-playfair text-xl font-bold text-slate-900 group-hover:text-[#002366] transition-colors">
+                    {leader.name}
+                  </h2>
+                  <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:mt-4 group-hover:max-h-32 group-hover:opacity-100">
+                    <p className="text-sm leading-relaxed text-slate-600 italic">
+                      {leader.desc}
+                    </p>
+                  </div>
                 </div>
               </article>
             ))}

@@ -51,9 +51,9 @@ export default function HomePage() {
       {/* Section: Welcome to Damdami Taksal */}
       <section className="bg-white py-24 border-b border-slate-50">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
-          <div className="grid gap-16 lg:grid-cols-[1.2fr_0.8fr] lg:items-center">
-            <div className="space-y-8">
-              <div className="flex items-center gap-3">
+          <div className="max-w-4xl mx-auto">
+            <div className="flex flex-col items-center text-center space-y-10">
+              <div className="flex items-center justify-center gap-3">
                 <span className="h-px w-8 bg-[#ff9933]"></span>
                 <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#ff9933]">
                   Ji Aayan Nu
@@ -62,29 +62,57 @@ export default function HomePage() {
               <h2 className="font-playfair text-4xl font-bold leading-tight text-[#002366] sm:text-5xl">
                 Welcome to Damdami Taksal
               </h2>
+
+              <div className="flex flex-wrap justify-center gap-6 mt-4">
+                <Link href="/gurbani/katha" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                  Katha
+                </Link>
+                
+                <Link href="/media/audio" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                  Kirtan
+                </Link>
+                <Link href="/history/leaders" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                  Leaders
+                </Link>
+              </div>
               
               {/* Professional Guru Image Gallery */}
               <div className="grid grid-cols-3 gap-4 pt-4">
-                {["guru1.png", "guru2.png", "guru3.png"].map((img, i) => (
-                  <div 
-                    key={i} 
+                {[
+                  {
+                    src: "guru1.png",
+                    desc: "Respected Panthic diamond treasure-trove of knowledge Brahm Giani complete in the practices of the Khalsa Sant…",
+                  },
+                  {
+                    src: "guru2.png",
+                    desc: "The 20th century’s great General the heart of the Sikh youth charismatic personality Sant Jarnail Singh…",
+                  },
+                  {
+                    src: "guru3.png",
+                    desc: "Sant Jee led the Sikh nation into the new millenium Baba Takhur Singh Jee was born…",
+                  },
+                ].map((leader, i) => (
+                  <Link
+                    key={i}
+                    href="/history/leaders"
                     className="group relative aspect-[3/4] overflow-hidden rounded-lg border-2 border-transparent transition-all duration-700 hover:border-[#ff9933] hover:shadow-2xl"
                   >
                     <img
-                      src={img}
+                      src={leader.src}
                       alt={`Guru Image ${i + 1}`}
                       className="h-full w-full object-cover transition-all duration-[1.5s] grayscale group-hover:grayscale-0 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#002366]/60 via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                  </div>
+                    {/* Hover Overlay with text */}
+                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#002366]/85 p-4 text-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                      <div className="mb-2 h-px w-8 bg-[#ff9933]" />
+                      <p className="text-[9px] leading-relaxed text-white sm:text-[11px] lg:text-xs">
+                        {leader.desc}
+                      </p>
+                      <div className="mt-2 h-px w-8 bg-[#ff9933]" />
+                    </div>
+                  </Link>
                 ))}
               </div>
-            </div>
-            <div className="relative rounded-2xl bg-[#fffaf0] p-10 shadow-inner">
-              <div className="absolute -left-2 top-10 h-12 w-1 bg-[#ff9933]"></div>
-              <p className="font-playfair text-2xl font-medium italic leading-relaxed text-[#002366]">
-                "The Taksal is the heartbeat of the Panth, preserving the purity of the Guru's word and the spirit of the Khalsa."
-              </p>
             </div>
           </div>
         </div>

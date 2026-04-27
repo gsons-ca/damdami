@@ -8,18 +8,21 @@ export default function ShaheedsPage() {
       title: "First Jathedar & Great Scholar",
       description: "A titan of Sikh history who fought for the sanctity of Sri Harmandir Sahib. Even at the age of 75, their devotion and strength in battle established the standard for the Sant-Sipahi (Saint-Soldier) ideal.",
       iconColor: "text-[#ff9933] bg-orange-50",
+      image: "https://images.unsplash.com/photo-1620216501064-07d47225c48b?auto=format&fit=crop&q=80&w=800"
     },
     {
       name: "Baba Gurbaksh Singh Ji",
       title: "Second Jathedar",
       description: "An embodiment of discipline and sacrifice. They led the Khalsa during a pivotal era of defense, ensuring that the light of Gurbani Vidya remained unextinguished despite constant invasions.",
       iconColor: "text-[#002366] bg-blue-50",
+      image: "https://images.unsplash.com/photo-1621274147744-933390886a11?auto=format&fit=crop&q=80&w=800"
     },
     {
       name: "Modern Era Martyrs",
       title: "Defenders of the Panth",
       description: "Continuing the lineage of sacrifice, numerous Gursikhs from the Taksal have laid down their lives in the 20th and 21st centuries to preserve the honor and autonomy of the Khalsa Panth.",
       iconColor: "text-red-600 bg-red-50",
+      image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d99d?auto=format&fit=crop&q=80&w=800"
     }
   ];
 
@@ -54,26 +57,38 @@ export default function ShaheedsPage() {
         {shaheeds.map((shaheed) => (
           <article 
             key={shaheed.name} 
-            className="group relative flex flex-col rounded-[2px] border border-slate-200 bg-white p-10 transition-all duration-300 hover:border-[#ff9933]/40 hover:shadow-2xl hover:shadow-orange-900/5"
+            className="group relative flex aspect-[3/4] flex-col overflow-hidden rounded-[2px] bg-slate-900 shadow-xl"
           >
-            <div className={`mb-8 flex h-14 w-14 items-center justify-center rounded-[2px] ${shaheed.iconColor}`}>
-              <Shield size={28} />
-            </div>
-            <div className="flex-1 space-y-4">
-              <h2 className="font-playfair text-2xl font-bold text-[#002366] group-hover:text-[#ff9933] transition-colors">
+            {/* Background Image with Zoom Effect */}
+            <img 
+              src={shaheed.image} 
+              alt={shaheed.name}
+              className="absolute inset-0 h-full w-full object-cover opacity-60 transition-transform duration-700 group-hover:scale-110 group-hover:opacity-40"
+            />
+            
+            {/* Content Overlay */}
+            <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-8">
+              <div className="transform transition-transform duration-500 group-hover:-translate-y-4">
+                <p className="mb-2 text-xs font-bold uppercase tracking-widest text-[#ff9933]">
+                  {shaheed.title}
+                </p>
+                <h2 className="font-playfair text-2xl font-bold text-white mb-4">
                 {shaheed.name}
               </h2>
-              <p className="text-sm font-bold uppercase tracking-widest text-slate-400">
-                {shaheed.title}
-              </p>
-              <p className="text-base leading-relaxed text-slate-600">
-                {shaheed.description}
-              </p>
-            </div>
-            <div className="mt-8 pt-6 border-t border-slate-50">
-              <span className="text-xs font-bold uppercase tracking-widest text-[#002366] opacity-0 group-hover:opacity-100 transition-opacity">
-                Immortal Legacy
-              </span>
+                
+                {/* Description that appears on hover */}
+                <div className="max-h-0 overflow-hidden opacity-0 transition-all duration-500 group-hover:max-h-40 group-hover:opacity-100">
+                  <p className="text-sm leading-relaxed text-slate-200">
+                    {shaheed.description}
+                  </p>
+                  <div className="mt-6 flex items-center gap-2 text-[#ff9933]">
+                    <Shield size={16} />
+                    <span className="text-[10px] font-bold uppercase tracking-[0.2em]">
+                      Immortal Legacy
+                    </span>
+                  </div>
+                </div>
+              </div>
             </div>
           </article>
         ))}
