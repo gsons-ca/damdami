@@ -223,7 +223,7 @@ export default function HomePage() {
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <div className="relative aspect-video overflow-hidden rounded-sm shadow-2xl">
               <img
-                src='prayer_image.png'
+                src='school.png'
                 alt="Community gathering and prayer"
                 loading="lazy"
                 className="h-full w-full object-cover opacity-90 transition duration-700 hover:scale-105"
