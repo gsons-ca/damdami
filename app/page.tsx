@@ -1,8 +1,56 @@
-import Link from "next/link";
-import { BookOpen, History, Users, PlayCircle, GraduationCap, Shield, ArrowRight, } from "lucide-react";
+'use client';
 
+import { useState } from "react";
+import Link from "next/link";
+import { BookOpen, History, Users, PlayCircle, GraduationCap, Shield, ArrowRight } from "lucide-react";
+
+const leadersData = [
+  {
+    name: "Baba Deep Singh Ji",
+    src: "guru1.png",
+    desc: "Respected Panthic diamond treasure-trove of knowledge Brahm Giani complete in the practices of the Khalsa Sant…",
+  },
+  {
+    name: "Baba Gurbaksh Singh Ji",
+    src: "guru2.png",
+    desc: "A fearless leader who stood as the vanguard of the Sikh Panth, upholding the scholarly traditions while leading the Khalsa in defense of the faith.",
+  },
+  {
+    name: "Baba Soorat Singh Ji",
+    src: "guru3.png",
+    desc: "A master of Gurbani Vidya who ensured the continuity of the Taksal's unique oral tradition and interpretation (Katha) during turbulent times.",
+  },
+  {
+    name: "Sant Giani Sundar Singh Ji",
+    src: "guru4.png",
+    desc: "Credited with modernizing the Taksal's structure, he was a giant of Gurbani Santhiya and a key figure in the Singh Sabha movement.",
+  },
+  {
+    name: "Sant Giani Gurbachan Singh Ji",
+    src: "guru5.png",
+    desc: "Affectionately known as 'Khalsa Ji', he completed the entire Katha of Sri Guru Granth Sahib Ji 27 times, traveling globally to spread Gurmat.",
+  },
+  {
+    name: "Sant Giani Kartar Singh Ji",
+    src: "guru6.png",
+    desc: "A fearless protector of Sikh identity and Maryada who led massive marches against the suppression of Sikh rights in the 1970s.",
+  },
+  {
+    name: "Sant Giani Jarnail Singh Ji",
+    src: "guru7.png",
+    desc: "The 20th century’s great General the heart of the Sikh youth charismatic personality Sant Jarnail Singh…",
+  },
+  {
+    name: "Baba Thakur Singh Ji",
+    src: "guru8.png",
+    desc: "Sant Jee led the Sikh nation into the new millenium Baba Takhur Singh Jee was born…",
+  },
+];
 
 export default function HomePage() {
+  const [showAll, setShowAll] = useState(false);
+  const visibleLeaders = showAll ? leadersData : leadersData.slice(0, 3);
+
   return (
     <main className="relative overflow-x-hidden">
       {/* Section 1: Hero - The Throne of Knowledge */}
@@ -37,7 +85,7 @@ export default function HomePage() {
           <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
             <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/50 bg-white ring-1 ring-slate-200">
               <img
-                src="damdami_image.png"
+                src="school.png"
                 alt="Traditional Sikh Gurmat Vidya gathering"
                 loading="eager"
                 className="h-full w-full object-cover transition-transform duration-[2s] ease-out hover:scale-110"
@@ -63,56 +111,57 @@ export default function HomePage() {
                 Welcome to Damdami Taksal
               </h2>
 
-              <div className="flex flex-wrap justify-center gap-6 mt-4">
+              <div className="flex flex-wrap justify-center gap-10 mt-4">
                 <Link href="/gurbani/katha" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
                   Katha
-                </Link>
-                
-                <Link href="/media/audio" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
-                  Kirtan
                 </Link>
                 <Link href="/history/leaders" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
                   Leaders
                 </Link>
+                <Link href="/history/the-ten-gurus" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                  The Ten Gurus
+                </Link>
+                <Link href="/media" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                  Media
+                </Link>
               </div>
               
               {/* Professional Guru Image Gallery */}
-              <div className="grid grid-cols-3 gap-4 pt-4">
-                {[
-                  {
-                    src: "guru1.png",
-                    desc: "Respected Panthic diamond treasure-trove of knowledge Brahm Giani complete in the practices of the Khalsa Sant…",
-                  },
-                  {
-                    src: "guru2.png",
-                    desc: "The 20th century’s great General the heart of the Sikh youth charismatic personality Sant Jarnail Singh…",
-                  },
-                  {
-                    src: "guru3.png",
-                    desc: "Sant Jee led the Sikh nation into the new millenium Baba Takhur Singh Jee was born…",
-                  },
-                ].map((leader, i) => (
+              <div className="flex flex-wrap justify-center gap-6 pt-4">
+                {visibleLeaders.map((leader, i) => (
                   <Link
                     key={i}
                     href="/history/leaders"
-                    className="group relative aspect-[3/4] overflow-hidden rounded-lg border-2 border-transparent transition-all duration-700 hover:border-[#ff9933] hover:shadow-2xl"
+                    className="group relative aspect-[3/4] w-full max-w-[260px] overflow-hidden rounded-lg border-2 border-transparent transition-all duration-700 hover:border-[#ff9933] hover:shadow-2xl sm:w-[260px]"
                   >
                     <img
                       src={leader.src}
-                      alt={`Guru Image ${i + 1}`}
-                      className="h-full w-full object-cover transition-all duration-[1.5s] grayscale group-hover:grayscale-0 group-hover:scale-110"
+                      alt={leader.name}
+                      className="h-full w-full object-cover transition-all duration-[1.5s] grayscale group-hover:grayscale-0 group-hover:scale-105"
                     />
                     {/* Hover Overlay with text */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#002366]/85 p-4 text-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">
-                      <div className="mb-2 h-px w-8 bg-[#ff9933]" />
+                      <h3 className="mb-1 font-playfair text-sm font-bold text-[#ff9933] lg:text-base">
+                        {leader.name}
+                      </h3>
+                      <div className="mb-3 h-px w-8 bg-white/20" />
                       <p className="text-[9px] leading-relaxed text-white sm:text-[11px] lg:text-xs">
                         {leader.desc}
                       </p>
-                      <div className="mt-2 h-px w-8 bg-[#ff9933]" />
+                      <div className="mt-3 h-px w-8 bg-white/20" />
                     </div>
                   </Link>
                 ))}
               </div>
+
+              {!showAll && (
+                <button 
+                  onClick={() => setShowAll(true)}
+                  className="mt-8 text-[11px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-all hover:scale-105 active:scale-95"
+                >
+                  See more...
+                </button>
+              )}
             </div>
           </div>
         </div>
