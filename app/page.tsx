@@ -7,7 +7,7 @@ import { BookOpen, History, Users, PlayCircle, GraduationCap, Shield, ArrowRight
 const leadersData = [
   {
     name: "Baba Deep Singh Ji",
-    src: "guru1.png",
+    src: "Baba_Deep_Singh_Jee_Shaheed.png",
     desc: "Respected Panthic diamond treasure-trove of knowledge Brahm Giani complete in the practices of the Khalsa Sant…",
   },
   {
@@ -22,17 +22,17 @@ const leadersData = [
   },
   {
     name: "Sant Giani Sundar Singh Ji",
-    src: "guru4.png",
+    src: "Sant_Giani_Sundar_Singh_Jee_Bhindranwale.png",
     desc: "Credited with modernizing the Taksal's structure, he was a giant of Gurbani Santhiya and a key figure in the Singh Sabha movement.",
   },
   {
     name: "Sant Giani Gurbachan Singh Ji",
-    src: "guru5.png",
+    src: "Sant_Giani_Gurbachan_Singh_Jee_Khalsa_Bhindranwale.png",
     desc: "Affectionately known as 'Khalsa Ji', he completed the entire Katha of Sri Guru Granth Sahib Ji 27 times, traveling globally to spread Gurmat.",
   },
   {
     name: "Sant Giani Kartar Singh Ji",
-    src: "guru6.png",
+    src: "Sant_Giani_Kartar_Singh_Jee_Khalsa_Bhindranwale.png",
     desc: "A fearless protector of Sikh identity and Maryada who led massive marches against the suppression of Sikh rights in the 1970s.",
   },
   {
@@ -54,43 +54,40 @@ export default function HomePage() {
   return (
     <main className="relative overflow-x-hidden">
       {/* Section 1: Hero - The Throne of Knowledge */}
-      <header className="relative bg-[#fff2e5] pb-20 pt-16">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-12">
-          <div className="space-y-8">
-            <div className="flex items-center gap-3">
+      <header className="relative overflow-hidden bg-white pb-20 pt-16">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src="header_background.png" 
+            alt="Header Background" 
+            loading="eager"
+            className="h-full w-full object-cover opacity-40"
+          />
+        </div>
+
+        <div className="relative z-10 mx-auto max-w-5xl px-6 py-12 text-center sm:px-8 lg:px-12">
+          <div className="flex flex-col items-center space-y-8">
+            <div className="flex items-center justify-center gap-3">
               <span className="h-px w-8 bg-[#ff9933]"></span>
               <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#ff9933]">
                 Established 1706
               </p>
             </div>
             <div className="space-y-6">
-              <h1 className="max-w-4xl font-playfair text-4xl font-bold leading-tight text-[#002366] sm:text-5xl">
+              <h1 className="mx-auto max-w-4xl font-playfair text-4xl font-bold leading-tight text-[#002366] sm:text-5xl">
                 Damdami Taksal Canada — honouring lineage, Sikh culture, and Gurmat education in the diaspora.
               </h1>
-              <p className="max-w-2xl text-lg leading-8 text-slate-700">
+              <p className="mx-auto max-w-2xl text-lg leading-8 text-slate-700">
                 Founded by Sri Guru Gobind Singh Ji, Damdami Taksal is the eternal school of Sikh philosophy, dedicated to preserving the authentic oral tradition, Gurbani Santhiya, and the Khalsa Rehat.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap justify-center gap-4">
               <Link href="/history" className="inline-flex items-center justify-center rounded-[2px] bg-[#002366] px-8 py-4 text-sm font-bold uppercase tracking-widest text-white transition hover:bg-[#001f55] shadow-lg shadow-blue-900/20">
                 Our History
               </Link>
               <Link href="/gurbani/santhiya" className="inline-flex items-center justify-center rounded-[2px] border-2 border-[#002366] px-8 py-4 text-sm font-bold uppercase tracking-widest text-[#002366] transition hover:bg-[#002366] hover:text-white">
                 Spiritual Resources
               </Link>
-            </div>
-          </div>
-
-          <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/50 bg-white ring-1 ring-slate-200">
-              <img
-                src="school.png"
-                alt="Traditional Sikh Gurmat Vidya gathering"
-                loading="eager"
-                className="h-full w-full object-cover transition-transform duration-[2s] ease-out hover:scale-110"
-              />
-              
             </div>
           </div>
         </div>
