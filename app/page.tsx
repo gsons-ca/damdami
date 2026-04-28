@@ -12,12 +12,12 @@ const leadersData = [
   },
   {
     name: "Baba Gurbaksh Singh Ji",
-    src: "guru2.png",
+    src: "Baba_Gurbaksh_Singh_Jee_Shaheed.png",
     desc: "A fearless leader who stood as the vanguard of the Sikh Panth, upholding the scholarly traditions while leading the Khalsa in defense of the faith.",
   },
   {
     name: "Baba Soorat Singh Ji",
-    src: "guru3.png",
+    src: "Baba_Soorat_Singh_ji.png",
     desc: "A master of Gurbani Vidya who ensured the continuity of the Taksal's unique oral tradition and interpretation (Katha) during turbulent times.",
   },
   {
@@ -37,12 +37,12 @@ const leadersData = [
   },
   {
     name: "Sant Giani Jarnail Singh Ji",
-    src: "guru7.png",
+    src: "Sant_Giani_Jarnail_Singh_Ji.png",
     desc: "The 20th century’s great General the heart of the Sikh youth charismatic personality Sant Jarnail Singh…",
   },
   {
     name: "Baba Thakur Singh Ji",
-    src: "guru8.png",
+    src: "Baba_Thakur_Singh_Ji.png",
     desc: "Sant Jee led the Sikh nation into the new millenium Baba Takhur Singh Jee was born…",
   },
 ];
@@ -67,8 +67,8 @@ export default function HomePage() {
         <div className="relative z-10 mx-auto max-w-5xl px-6 py-12 text-center sm:px-8 lg:px-12">
           <div className="flex flex-col items-center space-y-8">
             <div className="flex items-center justify-center gap-3">
-              <span className="h-px w-8 bg-[#ff9933]"></span>
-              <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#ff9933]">
+              <span className="h-0.5 w-16 bg-[#ff9933]"></span>
+              <p className="text-base font-black uppercase tracking-[0.5em] text-[#ff9933]">
                 Established 1706
               </p>
             </div>
@@ -94,13 +94,13 @@ export default function HomePage() {
       </header>
 
       {/* Section: Welcome to Damdami Taksal */}
-      <section className="bg-white py-24 border-b border-slate-50">
+      <section className="bg-[#fffaf0] py-24 border-b border-slate-50">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col items-center text-center space-y-10">
               <div className="flex items-center justify-center gap-3">
-                <span className="h-px w-8 bg-[#ff9933]"></span>
-                <p className="text-xs font-bold uppercase tracking-[0.4em] text-[#ff9933]">
+                <span className="h-0.5 w-16 bg-[#ff9933]"></span>
+                <p className="text-base font-black uppercase tracking-[0.5em] text-[#ff9933]">
                   Ji Aayan Nu
                 </p>
               </div>
@@ -264,7 +264,7 @@ export default function HomePage() {
 
           <div className="grid gap-8 md:grid-cols-2">
             <div className="flex gap-6 rounded-[2px] border border-slate-200 bg-white p-8 shadow-sm transition-transform hover:-translate-y-1">
-              <PlayCircle size={48} className="shrink-0 text-[#002366]" />
+              <PlayCircle size={56} className="shrink-0 text-[#002366]" />
               <div>
                 <h3 className="text-xl font-bold text-[#002366]">Audio & Video Katha</h3>
                 <p className="mt-2 text-slate-600">Access thousands of hours of Katha by Mahapurakhs on Sri Guru Granth Sahib Ji and Suraj Parkash.</p>
@@ -272,7 +272,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="flex gap-6 rounded-[2px] border border-slate-200 bg-white p-8 shadow-sm transition-transform hover:-translate-y-1">
-              <BookOpen size={48} className="shrink-0 text-[#002366]" />
+              <BookOpen size={56} className="shrink-0 text-[#002366]" />
               <div>
                 <h3 className="text-xl font-bold text-[#002366]">Pothis & Publications</h3>
                 <p className="mt-2 text-slate-600">Download authentic Taksal publications, Gutka Sahibs, and Steeks for deep Gurbani study.</p>
