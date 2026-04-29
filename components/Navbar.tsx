@@ -93,7 +93,7 @@ export function Navbar() {
           {pathname !== "/" && (
           <button
             onClick={() => router.back()}
-            className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition hover:bg-slate-100 hover:text-[#002366]"
+            className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 transition hover:bg-slate-100 hover:text-[#002b7a]"
             aria-label="Go backward"
           >
             <ArrowLeft size={20} />
@@ -109,7 +109,7 @@ export function Navbar() {
             height="60"
             className="rounded-[2px] object-contain"
           />
-          <span className="text-xl font-bold tracking-tight text-[#002366]">Damdami Taksal</span>
+          <span className="text-xl font-bold tracking-tight text-[#002b7a]">Damdami Taksal</span>
         </Link>
         </div>
 
@@ -118,7 +118,7 @@ export function Navbar() {
           {navLinks.map((link) => (
             <li key={link.label} className="group relative">
               {link.subLinks ? (
-                <div className="flex items-center gap-1 cursor-default py-2 text-sm font-medium text-slate-700 transition hover:text-[#002366]">
+                <div className="flex items-center gap-1 cursor-default py-2 text-sm font-medium text-slate-700 transition hover:text-[#002b7a]">
                   {link.label}
                   <ChevronDown size={14} />
                   
@@ -129,7 +129,7 @@ export function Navbar() {
                         <li key={sub.href}>
                           <Link
                             href={sub.href}
-                            className="block rounded-[2px] px-3 py-2 text-xs font-medium text-slate-600 transition hover:bg-slate-50 hover:text-[#002366]"
+                            className="block rounded-[2px] px-3 py-2 text-xs font-medium text-slate-600 transition hover:bg-slate-50 hover:text-[#002b7a]"
                           >
                             {sub.label}
                           </Link>
@@ -141,7 +141,7 @@ export function Navbar() {
               ) : (
               <Link
                 href={link.href}
-                className="text-sm font-medium text-slate-700 transition hover:text-[#002366]"
+                className="text-sm font-medium text-slate-700 transition hover:text-[#002b7a]"
               >
                 {link.label}
               </Link>
@@ -153,7 +153,7 @@ export function Navbar() {
         {/* Mobile Menu Toggle */}
         <button 
           onClick={() => setIsOpen(!isOpen)}
-          className="rounded-[2px] bg-[#002366] p-2 text-white transition hover:bg-[#001f55] md:hidden"
+          className="rounded-[2px] bg-[#002b7a] p-2 text-white transition hover:bg-[#002366] md:hidden"
         >
           {isOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -181,7 +181,7 @@ export function Navbar() {
                             <Link
                               href={sub.href}
                               onClick={() => setIsOpen(false)}
-                              className="block text-sm font-medium text-slate-500 hover:text-[#002366]"
+                              className="block text-sm font-medium text-slate-500 hover:text-[#002b7a]"
                             >
                               {sub.label}
                             </Link>
@@ -194,7 +194,7 @@ export function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block text-base font-medium text-slate-700 hover:text-[#002366]"
+                    className="block text-base font-medium text-slate-700 hover:text-[#002b7a]"
                   >
                     {link.label}
                   </Link>

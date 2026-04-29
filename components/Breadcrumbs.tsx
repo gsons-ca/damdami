@@ -31,9 +31,9 @@ export function Breadcrumbs() {
             {index > 0 && <span className="text-slate-300">/</span>}
             <li>
               {index === breadcrumbs.length - 1 ? (
-                <span className="font-medium text-[#002366]">{crumb.label}</span>
+                <span className="font-medium text-[#002b7a]">{crumb.label}</span>
               ) : (
-                <Link href={crumb.href} className="hover:text-[#002366] transition-colors">
+                <Link href={crumb.href} className="hover:text-[#002b7a] transition-colors">
                   {crumb.label}
                 </Link>
               )}
