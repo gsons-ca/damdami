@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { BookOpen, History, Users, PlayCircle, GraduationCap, Shield, ArrowRight } from "lucide-react";
+import { BookOpen, History, Users, PlayCircle, GraduationCap, Shield, ArrowRight, GalleryHorizontal, GalleryThumbnails } from "lucide-react";
 
 const leadersData = [
   {
@@ -103,22 +103,23 @@ export default function HomePage() {
                   Ji Aayan Nu
                 </p>
               </div>
-              <h2 className="font-playfair text-4xl font-bold leading-tight text-[#002b7a] sm:text-5xl">
+              <div>
+                <h2 className="font-playfair text-4xl font-bold leading-tight text-[#002b7a] sm:text-5xl">
                 Welcome to Damdami Taksal
               </h2>
-
+              </div>
               <div className="flex flex-wrap justify-center gap-10 mt-4">
-                <Link href="/gurbani/katha" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
-                  Katha
+                <Link href="/history/the-ten-gurus" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                  The Ten Gurus
                 </Link>
                 <Link href="/history/leaders" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
                   Leaders
                 </Link>
-                <Link href="/history/the-ten-gurus" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
-                  The Ten Gurus
-                </Link>
                 <Link href="/history/gursikhs" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
                   Gursikhs
+                </Link>
+                <Link href="/history/shaheeds" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                  Shaheeds
                 </Link>
               </div>
               
@@ -180,20 +181,23 @@ export default function HomePage() {
                 imageSrc: "gurbani_santhiya.png", // Placeholder image - ensure this image exists in your public folder
                 imageAlt: "Students learning Gurbani Santhiya",
                 linkHref: "/gurbani/santhiya",
+                more: "Read more..."
               },
               {
                 title: "Gurmat Katha",
-                desc: "Expounding upon the deep meanings of Sri Guru Granth Sahib Ji through historical context.",
+                desc: "",
                 imageSrc: "Rehat_Maryada.png", // Placeholder image - ensure this image exists in your public folder
                 imageAlt: "Sikh scholar giving Gurmat Katha",
                 linkHref: "/gurbani/katha",
+                more: "Read more..."
               },
               {
                 title: "Latest Images",
-                desc: "Maintaining the pristine code of conduct and martial spirit of the Khalsa Panth.",
-                imageSrc: "/rehat_card.jpg", // Placeholder image - ensure this image exists in your public folder
+                desc: "",
+                imageSrc: "/latest_image.png", // Placeholder image - ensure this image exists in your public folder
                 imageAlt: "Khalsa practicing traditional martial arts",
                 linkHref: "/code-of-conduct/rehat",
+                more: "see more..." 
               },
             ].map((pillar) => (
               <div key={pillar.title} className="group relative h-72 overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl">
@@ -207,7 +211,7 @@ export default function HomePage() {
                   <h3 className="font-playfair text-2xl font-bold">{pillar.title}</h3>
                   <p className="mt-2 text-sm leading-relaxed opacity-90">{pillar.desc}</p>
                   <Link href={pillar.linkHref} className="mt-4 inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#ff9933] hover:underline">
-                    Read More <ArrowRight size={16} />
+                    {pillar.more} <ArrowRight size={16} />
                   </Link>
                 </div>
               </div>
@@ -231,21 +235,18 @@ export default function HomePage() {
             </div>
             <div className="space-y-8">
               <div className="inline-block rounded-full bg-[#ff9933] px-4 py-1 text-xs font-bold uppercase tracking-widest text-white">
-                Legacy of Martyrs
+                Gurmat education and scriptural preservation
               </div>
-              <h2 className="font-playfair text-4xl font-bold sm:text-5xl">The 14 Jathedars</h2>
+              <h2 className="font-playfair text-4xl font-bold sm:text-5xl">Our Spiritual Lineage</h2>
               <p className="text-lg leading-relaxed text-blue-100">
                 The Damdami Taksal is a Sikh seminary or school – that was founded by the tenth Sikh Guru, Sri Guru Gobind Singh Jee. It was set up to impart the spiritual and profound teachings of Gurbani (Sikh Scriptures) and it has now become a travelling university that imparts many faculties of teaching of Sikhi (the Sikh faith). We will now outline how the Damdami Taksal was founded.
               </p>
-              <div className="space-y-4 border-l-2 border-[#ff9933] pl-6">
-                <p className="italic text-blue-200">"The history of Damdami Taksal is written with the blood of martyrs and the ink of scholars."</p>
-              </div>
               <div className="flex flex-wrap gap-6">
-                <Link href="/history/leaders" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#ff9933] hover:underline">
-                  The Jathedars <History size={18} />
+                <Link href="/gurbani/katha" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#ff9933] hover:underline">
+                  Katha <BookOpen size={18} />
                 </Link>
-                <Link href="/history/shaheeds" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#ff9933] hover:underline">
-                  The Shaheeds <Shield size={18} />
+                <Link href="/gurbani/santhiya" className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-[#ff9933] hover:underline">
+                  Santhiya <BookOpen size={18} />
                 </Link>
               </div>
             </div>
@@ -271,11 +272,11 @@ export default function HomePage() {
               </div>
             </div>
             <div className="flex gap-6 rounded-[2px] border border-slate-200 bg-white p-8 shadow-sm transition-transform hover:-translate-y-1">
-              <BookOpen size={56} className="shrink-0 text-[#002b7a]" />
+              <GalleryThumbnails size={56} className="shrink-0 text-[#002b7a]" />
               <div>
-                <h3 className="text-xl font-bold text-[#002b7a]">Pothis & Publications</h3>
+                <h3 className="text-xl font-bold text-[#002b7a]">Photos</h3>
                 <p className="mt-2 text-slate-600">Download authentic Taksal publications, Gutka Sahibs, and Steeks for deep Gurbani study.</p>
-                <Link href="/gurbani" className="mt-4 inline-block text-sm font-bold text-[#ff9933] hover:underline">View Library</Link>
+                <Link href="/media/gallery" className="mt-4 inline-block text-sm font-bold text-[#ff9933] hover:underline">View Library</Link>
               </div>
             </div>
           </div>

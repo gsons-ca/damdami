@@ -101,7 +101,7 @@ export function Navbar() {
           )}
 
         {/* Logo / Brand */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-2">
           <img
             src="/damdami_logo.png"
             alt="Damdami Taksal Logo"
@@ -109,7 +109,9 @@ export function Navbar() {
             height="60"
             className="rounded-[2px] object-contain"
           />
-          <span className="text-xl font-bold tracking-tight text-[#002b7a]">Damdami Taksal</span>
+          <span className="text-xl font-bold tracking-tight text-[#002b7a]">Official website of Damdami Taksal 
+          </span>
+            
         </Link>
         </div>
 
