@@ -97,7 +97,7 @@ export default function HomePage() {
       <section className="bg-[#fffaf0] py-24 border-b border-slate-50">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl mx-auto">
-            <div className="flex flex-col items-center text-center space-y-10">
+            <div className="flex flex-col items-center text-center space-y-5">
               <div className="flex items-center justify-center gap-3">
                 <p className="text-base font-black uppercase tracking-[0.5em] text-[#ff9933]">
                   Ji Aayan Nu
@@ -108,17 +108,17 @@ export default function HomePage() {
               </h2>
 
               <div className="flex flex-wrap justify-center gap-10 mt-4">
-                <Link href="/gurbani/katha" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                <Link href="/gurbani/katha" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
                   Katha
                 </Link>
-                <Link href="/history/leaders" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                <Link href="/history/leaders" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
                   Leaders
                 </Link>
-                <Link href="/history/the-ten-gurus" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                <Link href="/history/the-ten-gurus" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
                   The Ten Gurus
                 </Link>
-                <Link href="/media" className="text-[10px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
-                  Media
+                <Link href="/history/gursikhs" className="text-[12px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-colors">
+                  Gursikhs
                 </Link>
               </div>
               
