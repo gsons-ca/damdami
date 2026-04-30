@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   description: "Damdami Taksal Canada preserves the Sikh tradition of Santhiya, Maryada, and Gurmat teaching in Canada.",
   metadataBase: new URL("https://damdamitaksal.ca"),
   keywords: ["Damdami Taksal Canada", "Sikh Santhiya Canada", "Gurmat Vidya", "Mahapurakh", "Gurbani"],
+  icons: {
+    icon: "/favi_icon.png",
+  },
   openGraph: {
     title: "Damdami Taksal Canada",
     description: "A cultural and religious preservation website for Sikh Santhiya, Gurmat Vidya, and Mahapurakh guidance.",

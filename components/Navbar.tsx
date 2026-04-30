@@ -40,6 +40,7 @@ const navLinks: NavLink[] = [
       { label: "Gursikhs", href: "/history/gursikhs" },
       { label: "Shaheeds", href: "/history/shaheeds" },
       { label: "Historical Gurdwaras", href: "/history/gurdwaras" },
+      { label: "Timeline Events", href: "/history/timeline-events" },
     ]
   },
   { 

@@ -24,23 +24,25 @@ export function Breadcrumbs() {
   }
 
   return (
-    <nav className="bg-white py-3 px-6 sm:px-8 lg:px-12 border-b border-slate-100">
-      <ol className="flex items-center space-x-2 text-sm text-slate-500">
-        {breadcrumbs.map((crumb, index) => (
-          <Fragment key={crumb.href}>
-            {index > 0 && <span className="text-slate-300">/</span>}
-            <li>
-              {index === breadcrumbs.length - 1 ? (
-                <span className="font-medium text-[#002b7a]">{crumb.label}</span>
-              ) : (
-                <Link href={crumb.href} className="hover:text-[#002b7a] transition-colors">
-                  {crumb.label}
-                </Link>
-              )}
-            </li>
-          </Fragment>
-        ))}
-      </ol>
+    <nav className="bg-white border-b border-slate-100">
+      <div className="mx-auto max-w-7xl px-6 py-3 sm:px-8 lg:px-12">
+        <ol className="flex items-center space-x-2 text-sm text-slate-500">
+          {breadcrumbs.map((crumb, index) => (
+            <Fragment key={crumb.href}>
+              {index > 0 && <span className="text-slate-300">/</span>}
+              <li>
+                {index === breadcrumbs.length - 1 ? (
+                  <span className="font-medium text-[#002b7a]">{crumb.label}</span>
+                ) : (
+                  <Link href={crumb.href} className="hover:text-[#002b7a] transition-colors">
+                    {crumb.label}
+                  </Link>
+                )}
+              </li>
+            </Fragment>
+          ))}
+        </ol>
+      </div>
     </nav>
   );
 }
