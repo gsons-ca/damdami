@@ -182,7 +182,7 @@ export default function HomePage() {
               {!showAll && (
                 <button 
                   onClick={() => setShowAll(true)}
-                  className="mt-8 text-[11px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-all hover:scale-105 active:scale-95"
+                  className="mt-8 text-[11px] font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-[#002366] transition-all hover:scale-105 active:scale-95 cursor-pointer"
                 >
                   See more...
                 </button>
