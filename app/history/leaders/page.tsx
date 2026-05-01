@@ -3,20 +3,44 @@ import { ArrowLeft, BookOpen, ShieldCheck, Award } from "lucide-react";
 
 const leaders = [
   {
+    id: 0,
+    name: "Sri Guru Gobind Singh Sahib Jee",
+    title: "The Tenth Guru & Founder",
+    period: "1666 – 1708",
+    bio: "The Damdami Taksal is a traveling Sikh university founded by the tenth Guru of the Sikhs Guru Gobind Singh Ji. The tenth Guru Guru Gobind Singh was at Anandpur Sahib delivering his Sikhs to Sachkhand. A Gursikh was reciting his daily prayer from Guru Granth Sahib with love and respect when he made a mistake. The Guru corrected his mistake informing him that prayer from the Guru Granth Sahib is just like a limb of Guru and making a mistake while reciting Gurbani is like hurting Guru. Following this Daya Singh along with other respected Gursikhs asked Guru if they could follow him learning proper pronunciation and prayer from the Guru Granth Sahib. 'Oh keeper of the poor! Bless us with the understanding of Gurbani. Without an understanding we don't know whether what we do is correct or incorrect.",
+    image: "/Sri_Guru_Gobind_Singh_Ji.png",
+  },
+  {
     id: 1,
     name: "Baba Deep Singh Ji Shaheed",
     title: "1st Mukhia Jathedar",
     period: "1682 – 1757",
-    bio: "Respected Panthic diamond treasure-trove of knowledge Brahm Giani complete in the practices of the Khalsa Sant…",
-    image: "https://images.unsplash.com/photo-1620216501064-07d47225c48b?auto=format&fit=crop&q=80&w=600",
+    bio: "Baba ji was born in the village of Pahuvind district Amritsar in the year 1682. Baba ji's fathers name was Bhagto ji and mothers name was Jioonee. From a young age Baba ji had practiced reciting Gurbani singing Kirtan and doing sangat of fellow Gursikhs morning and night. He regularly went horse riding and training in Shastar Vidya (weapons training). He was a lovable and popular character who conducted himself very well. The people in his locality treated him with great respect because of his religious nature.",
+    image: "/Baba_Deep_Singh_Jee_Shaheed.png",
   },
   {
     id: 2,
     name: "Baba Gurbaksh Singh Ji Shaheed",
     title: "2nd Mukhia Jathedar",
     period: "1688 – 1764",
-    bio: "The embodiment of sacrifice who led the Taksal during the era of the Misls, ensuring the lamp of Vidya stayed lit during extreme persecution.",
-    image: "https://images.unsplash.com/photo-1590076215667-875d4ef2d99d?auto=format&fit=crop&q=80&w=600",
+    bio: "Bhai Dasaunda Singh and Mata Lachmi ji from the village Leel (near Khemkaran) District Amritsar came to the live in the company of Sri Guru Gobind Singh Sahib ji and the Sikh Sangats (Congregation). Guru ji commanded them both to take part in the Seva (selfless service) of the house of the Lord with love. Impressed with their selfless service Guru ji granted their wish and blessed them with a son who would be a saint-soldier Baba Gurbaksh Singh ji was born in 1688 AD.",
+    image: "/Baba_Gurbaksh_Singh_Jee_Shaheed.png",
+  },
+  {
+    id: 3,
+    name: "Giani Bhai Soorat Singh Jee",
+    title: "3rd Mukhia Jathedar",
+    period: "18th Century",
+    bio: "Bhai Soorat Singh ji was born in thee village of Chanyot District Jhang (now in Pakistan). Giani ji's fathers name was Ram Chand who was renamed Bhai Ram Singh ji when initiated into the Sikh nation upon taking Amrit. Bhai Ram Singh ji studied Gurbani from Shaheed Bhai Mani Singh ji and propagated the teachings of Sikhi throughout Jhang. The Rulers minister in the area disliked what Bhai Soorat Singh ji was doing so along with his family he relocated to Amritsar.",
+    image: "/Baba_Soorat_Singh_ji.png",
+  },
+  {
+    id: 4,
+    name: "Bhai Gurdas Singh Jee",
+    title: "4th Mukhia Jathedar",
+    period: "1773 – 1800s",
+    bio: "Bhai Gurdas Singh ji was the eldest son of Giani Soorat Singh ji and were born in 1773. Like his father Bhai Sahib ji was a great scholar. Bhai Sahib ji became the Jathedar of Damdami Taksal after his father and continued the teaching of Gurbani Santhia and performing Katha at Sri Harmandir Sahib.",
+    image: "/Bhai_Gurdas_Singh_Jee.png",
   },
   {
     id: 12,
@@ -24,7 +48,7 @@ const leaders = [
     title: "12th Mukhia Jathedar",
     period: "1902 – 1969",
     bio: "Affectionately known as 'Khalsa Ji', he completed the full Katha of Sri Guru Granth Sahib Ji 27 times, reviving the oral tradition globally.",
-    image: "https://images.unsplash.com/photo-1515165562835-c758a4a7b1d8?auto=format&fit=crop&q=80&w=600",
+    image: "/Sant_Giani_Gurbachan_Singh_Jee_Khalsa_Bhindranwale.png",
   },
   {
     id: 13,
@@ -32,7 +56,7 @@ const leaders = [
     title: "13th Mukhia Jathedar",
     period: "1932 – 1977",
     bio: "A fearless protector of Gurbani Maryada who led the massive marches against the suppression of Sikh identity in the 1970s.",
-    image: "https://images.unsplash.com/photo-1485545713850-a580a5bd935c?auto=format&fit=crop&q=80&w=600",
+    image: "/Sant_Giani_Kartar_Singh_Jee_Khalsa_Bhindranwale.png",
   },
   {
     id: 14,
@@ -40,7 +64,7 @@ const leaders = [
     title: "14th Mukhia Jathedar",
     period: "1947 – 1984",
     bio: "The 20th century’s great General the heart of the Sikh youth charismatic personality Sant Jarnail Singh…",
-    image: "https://images.unsplash.com/photo-1599422315624-28230c137024?auto=format&fit=crop&q=80&w=600",
+    image: "/Sant_Giani_Jarnail_Singh_Ji.png",
   },
   {
     id: 15,
@@ -48,7 +72,7 @@ const leaders = [
     title: "Acting Jathedar (1984-2004)",
     period: "1915 – 2004",
     bio: "Sant Jee led the Sikh nation into the new millenium Baba Takhur Singh Jee was born…",
-    image: "https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&q=80&w=600",
+    image: "/Baba_Thakur_Singh_Ji.png",
   },
 ];
 

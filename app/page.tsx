@@ -1,12 +1,26 @@
 'use client';
 
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { BookOpen, History, Users, PlayCircle, GraduationCap, Shield, ArrowRight, GalleryHorizontal, GalleryThumbnails } from "lucide-react";
 
+const fadeInProps = {
+  initial: { opacity: 0, y: 20 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: false, amount: 0.1 },
+  transition: { duration: 0.5, ease: "easeOut" }
+} as const;
+
+const heroVariant = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 1.2 }
+};
+
 const leadersData = [
   {
-    name: "Baba Deep Singh Ji",
+    name: "Baba Deep Singh Jee Shaheed",
     src: "Baba_Deep_Singh_Jee_Shaheed.png",
     desc: "Respected Panthic diamond treasure-trove of knowledge Brahm Giani complete in the practices of the Khalsa Sant…",
   },
@@ -19,6 +33,11 @@ const leadersData = [
     name: "Baba Soorat Singh Ji",
     src: "Baba_Soorat_Singh_ji.png",
     desc: "A master of Gurbani Vidya who ensured the continuity of the Taksal's unique oral tradition and interpretation (Katha) during turbulent times.",
+  },
+  {
+    name: "Bhai Gurdas Singh Jee",
+    src: "Bhai_Gurdas_Singh_Jee.png",
+    desc: "The eldest son of Giani Soorat Singh ji, born in 1773. A great scholar like his father, he became the Jathedar of Damdami Taksal and continued the teaching of Gurbani Santhiya and performing Katha at Sri Harmandir Sahib.",
   },
   {
     name: "Sant Giani Sundar Singh Ji",
@@ -52,9 +71,12 @@ export default function HomePage() {
   const visibleLeaders = showAll ? leadersData : leadersData.slice(0, 3);
 
   return (
-    <main className="relative overflow-x-hidden">
+    <div className="relative">
       {/* Section 1: Hero - The Throne of Knowledge */}
-      <header className="relative overflow-hidden bg-white pb-20 pt-16">
+      <motion.header 
+        {...heroVariant}
+        className="relative min-h-[90vh] py-15 flex items-center justify-center overflow-hidden bg-white"
+      >
         <div className="absolute inset-0 z-0">
           <img 
             src="header_background.png" 
@@ -91,10 +113,16 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </header>
+      </motion.header>
 
       {/* Section: Welcome to Damdami Taksal */}
-      <section className="bg-[#fffaf0] py-24 border-b border-slate-50">
+      <motion.section
+        initial={fadeInProps.initial}
+        whileInView={fadeInProps.whileInView}
+        viewport={fadeInProps.viewport}
+        transition={fadeInProps.transition}
+        className="bg-[#fffaf0] py-18 border-b border-slate-50"
+      >
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="max-w-4xl mx-auto">
             <div className="flex flex-col items-center text-center space-y-5">
@@ -162,10 +190,16 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section 2: Gurmat Education - Core Pillars */}
-      <section className="bg-white py-24">
+      <motion.section
+        initial={fadeInProps.initial}
+        whileInView={fadeInProps.whileInView}
+        viewport={fadeInProps.viewport}
+        transition={fadeInProps.transition}
+        className="bg-white py-18"
+      >
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="mb-16 text-center">
             <h2 className="font-playfair text-4xl font-bold text-[#002b7a] sm:text-5xl">Aims & Objectives</h2>
@@ -218,10 +252,16 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section 3: The Eternal Lineage */}
-      <section className="bg-[#002b7a] py-24 text-white">
+      <motion.section
+        initial={fadeInProps.initial}
+        whileInView={fadeInProps.whileInView}
+        viewport={fadeInProps.viewport}
+        transition={fadeInProps.transition}
+        className="bg-[#002b7a] py-24 text-white"
+      >
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="grid gap-16 lg:grid-cols-2 lg:items-center">
             <div className="relative aspect-video overflow-hidden rounded-sm shadow-2xl">
@@ -252,10 +292,16 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Section 4: Multimedia & Resources */}
-      <section className="bg-[#fffaf0] py-24">
+      <motion.section
+        initial={fadeInProps.initial}
+        whileInView={fadeInProps.whileInView}
+        viewport={fadeInProps.viewport}
+        transition={fadeInProps.transition}
+        className="bg-[#fffaf0] py-24"
+      >
         <div className="mx-auto max-w-7xl px-6 sm:px-8 lg:px-12">
           <div className="mb-16 flex flex-col items-center text-center">
             <h2 className="font-playfair text-4xl font-bold text-[#002b7a]">Digital Library</h2>
@@ -281,7 +327,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </motion.section>
+    </div>
   );
 }
