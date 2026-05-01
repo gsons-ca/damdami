@@ -162,7 +162,7 @@ export default function HomePage() {
                     <img
                       src={leader.src}
                       alt={leader.name}
-                      className="h-full w-full object-cover transition-all duration-[1.5s] grayscale group-hover:grayscale-0 group-hover:scale-105"
+                      className="h-full w-full object-cover transition-all duration-[1.5s] group-hover:scale-105"
                     />
                     {/* Hover Overlay with text */}
                     <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#002b7a]/85 p-4 text-center opacity-0 transition-opacity duration-500 group-hover:opacity-100">

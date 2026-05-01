@@ -99,7 +99,7 @@ export default function MahapurakhPage() {
                 key={index} 
                 className="group relative flex flex-col border-t-4 border-[#D4AF37] bg-white p-6 shadow-sm transition-all hover:shadow-xl"
               >
-                <div className="relative -mt-16 mb-6 h-40 w-40 self-center overflow-hidden rounded-full border-4 border-white shadow-lg grayscale group-hover:grayscale-0 transition-all duration-500">
+                <div className="relative -mt-16 mb-6 h-40 w-40 self-center overflow-hidden rounded-full border-4 border-white shadow-lg transition-all duration-500">
                   <div className="flex h-full w-full items-center justify-center bg-slate-50 text-[#002366]/30">
                     <span className="text-[10px] font-bold uppercase tracking-tighter">Portrait {leader.id}</span>
                   </div>

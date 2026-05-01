@@ -8,7 +8,7 @@ const leaders = [
     title: "The Tenth Guru & Founder",
     period: "1666 – 1708",
     bio: "The Damdami Taksal is a traveling Sikh university founded by the tenth Guru of the Sikhs Guru Gobind Singh Ji. The tenth Guru Guru Gobind Singh was at Anandpur Sahib delivering his Sikhs to Sachkhand. A Gursikh was reciting his daily prayer from Guru Granth Sahib with love and respect when he made a mistake. The Guru corrected his mistake informing him that prayer from the Guru Granth Sahib is just like a limb of Guru and making a mistake while reciting Gurbani is like hurting Guru. Following this Daya Singh along with other respected Gursikhs asked Guru if they could follow him learning proper pronunciation and prayer from the Guru Granth Sahib. 'Oh keeper of the poor! Bless us with the understanding of Gurbani. Without an understanding we don't know whether what we do is correct or incorrect.",
-    image: "/Sri_Guru_Gobind_Singh_Ji.png",
+    image: "/Sri_Guru_Gobind_Singh_sahib_Jee.png",
   },
   {
     id: 1,
@@ -80,24 +80,13 @@ export default function LeadersPage() {
   return (
     <main className="min-h-screen bg-[#fffaf0]">
       {/* Hero / Header Section */}
-      <header className="relative bg-[#002366] py-32 text-white">
-        <div className="absolute inset-0 overflow-hidden opacity-20">
-          <div className="h-full w-full bg-[radial-gradient(#ff9933_1px,transparent_1px)] [background-size:40px_40px]" />
-        </div>
-        
+      <header className="relative bg-[#002366] py-25 text-white">
         <div className="relative z-10 mx-auto max-w-5xl px-6 text-center lg:px-12">
-          <Link 
-            href="/history" 
-            className="mb-8 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.3em] text-[#ff9933] hover:text-white transition-colors"
-          >
-            <ArrowLeft size={14} /> Back to Overview
-          </Link>
           <h1 className="font-playfair text-5xl font-bold leading-tight sm:text-7xl">
-            Lineage of Leaders
+            Leaders of Damdami Taksaal
           </h1>
           <p className="mx-auto mt-8 max-w-3xl text-xl leading-relaxed text-blue-100/80">
-            A succession of fourteen Mukhia Jathedars, starting from Baba Deep Singh Ji Shaheed, 
-            who have served as the custodians of Gurbani Vidya and the sovereign spirit of the Khalsa.
+            The jathedhars of Damdami Taksaal have led the Sikh nation since the times of the Tenth Master (Sri Guru Gobind Singh Jee). They have been some of the most high-spirited, humble and greatest beings to have graced the Earth and have set good examples on how to live life in accordance with the teachings of the Ten Gurus and Sri Guru Granth Sahib Jee. 
           </p>
         </div>
       </header>
@@ -111,16 +100,6 @@ export default function LeadersPage() {
               <ShieldCheck size={24} />
               <Award size={24} />
             </div>
-            <h2 className="font-playfair text-4xl font-bold text-[#002366]">
-              The Traveling University
-            </h2>
-            <p className="text-lg leading-relaxed text-slate-700">
-              Established at Sabo Ki Talwandi (Damdama Sahib), the Taksal was founded by the Tenth Guru, 
-              Sri Guru Gobind Singh Ji. The Jathedars of the Taksal have traditionally been the 
-              foremost scholars of the Panth, providing the authentic interpretation of Gurbani 
-              (Katha) and the correct pronunciation (Santhiya).
-            </p>
-            <div className="mx-auto h-px w-24 bg-[#ff9933]/30" />
           </div>
         </div>
       </section>
